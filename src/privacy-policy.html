@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure The Bag</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <img src="./images/logo-secure-the-bag.png" alt="">
+    <div
+      class="w-16 h-16 border-4 border-gray-300 rounded-full spinner border-t-blue-500 absolute left-0 right-0 m-auto">
+    </div>
+  </div>
+
+  <header class="bg-white lg:px-7 px-4 ">
+    <div class=" flex justify-between items-center py-6 border-b border-[#C1C5BF]">
+      <!-- Logo and Navigation Links (Left Side) -->
+      <div class="flex items-center gap-16">
+        <a href=""><img src="./images/logo-secure-the-bag.png" alt="logo-secure-the-bag"
+            class="w-[70px] lg:w-[106px]"></a>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-6 text-gray-700">
+          <ul class="items-center gap-10 flex flex-row justify-start list-none">
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="index.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                Home</a>
+            </li>
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="product-page.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                Product</a>
+            </li>
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="faq.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                FAQ</a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Auth Buttons (Right Side) -->
+      <div class="hidden md:flex space-x-4">
+        <a href="#"
+          class="px-7 py-4 bg-transparent rounded-xl outline-1 outline-offset-[-1px] outline-blue3 backdrop-blur-[6px] text-blue2 hover:bg-blue2 hover:text-white transition-all text-sm font-bold font-DM leading-none">
+          Login
+        </a>
+        <a href=""
+          class="px-7 py-4 bg-blue2 rounded-xl text-white text-sm font-bold font-DM leading-none outline-1 outline-offset-[-1px] outline-transparent hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all">
+          Sign Up
+        </a>
+      </div>
+
+      <!-- Mobile View: Burger Menu (visible on small screens) -->
+      <div class="md:hidden flex justify-between items-center ">
+
+        <button id="hamburger-icon" class="text-blue3">
+          <img src="./images/menu-icon.svg" alt="menu-icon" class="">
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu (Off-Canvas) -->
+    <div id="mobile-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden opacity-0 transition-opacity duration-500">
+    </div>
+    <div id="mobile-menu"
+      class="fixed inset-0 bg-white z-50 transform -translate-x-full scale-95 transition-transform duration-500 ease-in-out">
+      <!-- Close Button -->
+      <button id="close-menu" class="absolute top-4 right-4 text-gray-600 text-3xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+          viewBox="0 0 16 16">
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+        </svg>
+      </button>
+      <!-- Menu Links -->
+      <div class="flex flex-col items-center justify-center space-y-4 pt-20">
+        <ul class="items-center gap-10 flex flex-col justify-start list-none">
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="index.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              Home</a>
+          </li>
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="product-page.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              Product</a>
+          </li>
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="faq.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              FAQ</a>
+          </li>
+
+        </ul>
+        <div class="flex flex-col space-y-4 mt-6">
+          <a href="#"
+            class="px-7 py-4 bg-transparent rounded-xl outline-1 outline-offset-[-1px] outline-blue3 backdrop-blur-[6px] text-blue2 hover:bg-blue2 hover:text-white transition-all text-sm font-bold font-DM leading-none text-center">
+            Login
+          </a>
+          <a href=""
+            class="px-7 py-4 bg-blue2 rounded-xl text-white text-sm font-bold font-DM leading-none outline-1 outline-offset-[-1px] outline-transparent hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all">
+            Sign Up
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="opt-in py-10 lg:py-[90px]">
+      <div class="container">
+
+
+        <div class=" flex flex-col gap-10">
+          <!-- single item start  -->
+          <div class="flex flex-col gap-5 lg:gap-[30px]">
+            <h1 class=" text-NeutralStress text-2xl lg:text-5xl font-bold font-DM leading-[55.68px]">
+              Privacy Policy
+            </h1>
+            <p class="opacity-80 justify-start text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">
+              Secure the Bag (“we,” “us,” or “our”) is committed to protecting your privacy and ensuring that your
+              personal and
+              financial information is secure. This Privacy Policy explains how we collect, use, store, and share your
+              information
+              when you use our service, and it applies to all visitors and users of our website and mobile application.
+            </p>
+          </div>
+          <!-- single item end -->
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Information We Collect</h3>
+            <div class="flex flex-col gap-10">
+              <!-- inner single item start  -->
+              <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-3">
+                  <h4 class="text-Neutral-N800 text-base font-bold font-Inter leading-relaxed">Personal
+                    Information</h4>
+                  <p class="text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">When you create an
+                    account or use our
+                    service, we may collect:</p>
+                </div>
+                <ul class="flex flex-col gap-2">
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Contact Details: Name, email address, and phone number.
+                    </p>
+                  </li>
+
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Payment Information: Billing details processed via Stripe.
+                    </p>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Account Credentials: Username, password, and authentication data.
+                    </p>
+                  </li>
+
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      SMS Consent: Your explicit consent to receive SMS alerts.
+                    </p>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- inner single item end  -->
+              <!-- inner single item start  -->
+              <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-3">
+                  <h4 class="text-Neutral-N800 text-base font-bold font-Inter leading-relaxed">Financial Data via
+                    Bank Connections</h4>
+                  <p class="text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">Using our secure
+                    Plaid integration, we access:</p>
+                </div>
+                <ul class="flex flex-col gap-2">
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Account Balances: Real-time balance updates.
+                    </p>
+                  </li>
+
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Transaction Data: Recent transaction details and relevant banking activity.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- inner single item end  -->
+            </div>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              How We Use Your Information
+            </h3>
+            <div class="flex flex-col gap-10">
+              <!-- inner single item start  -->
+              <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-3">
+                  <p class="text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">
+                    We use your information to:
+                  </p>
+                </div>
+                <ul class="flex flex-col gap-2">
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Provide Our Service: Deliver real-time SMS alerts, manage subscriptions, and update you on your
+                      account activity.
+                    </p>
+                  </li>
+
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Enhance Your Experience: Customize alert schedules, display relevant account details, and ensure
+                      seamless bank
+                      connections.
+                    </p>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Process Payments: Handle billing and subscription management securely via Stripe.
+                    </p>
+                  </li>
+
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Communicate with You: Send service-related notifications, updates, and support messages.
+                    </p>
+                  </li>
+
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Improve Our Service: Analyze usage data to better understand user behavior and improve our
+                      offerings.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- inner single item end  -->
+            </div>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              How We Share Your Information
+            </h3>
+            <div class="flex flex-col gap-10">
+              <!-- inner single item start  -->
+              <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-3">
+                  <p class="text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">
+                    Your privacy is our priority. We only share your data in the following circumstances:
+                  </p>
+                </div>
+                <ul class="flex flex-col gap-2">
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Third-Party Service Providers: We work with trusted partners like Plaid (for bank connections),
+                      Stripe (for payment
+                      processing), and Twilio (for SMS delivery). These providers adhere to stringent security standards
+                      and are contractually
+                      obligated to protect your information.
+                    </p>
+                  </li>
+
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Legal Requirements: We may disclose your information if required to do so by law or in response to
+                      valid legal requests.
+                    </p>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- inner single item end  -->
+            </div>
+          </div>
+          <!-- single item end -->
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Data Retention and Your Rights
+            </h3>
+            <div class="flex flex-col gap-10">
+              <!-- inner single item start  -->
+              <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-3">
+                  <h4 class="text-Neutral-N800 text-base font-bold font-Inter leading-relaxed">Data Retention</h4>
+                  <p class="text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">
+                    We retain your personal data for as long as your account is active or as needed to provide our
+                    service. Once you cancel
+                    your subscription, we will securely delete your data, subject to any legal obligations.
+                  </p>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                  <h4 class="text-Neutral-N800 text-base font-bold font-Inter leading-relaxed">Your Rights</h4>
+                  <p class="text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">
+                    You have the right to:
+                  </p>
+                </div>
+
+
+                <ul class="flex flex-col gap-2">
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Access & Update: Request access to your personal data or ask for corrections if you believe any
+                      information is
+                      inaccurate.
+                    </p>
+                  </li>
+
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Delete: Request that your personal data be deleted.
+                    </p>
+                  </li>
+
+                  <li class="flex items-start gap-2.5">
+                    <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                    <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                      Opt-Out: Modify your communication preferences or opt out of receiving SMS alerts at any time
+                      through your account
+                      settings.To exercise these rights, please contact us using the information provided in the
+                      “Contact Us” section below.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <!-- inner single item end  -->
+            </div>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Cookies and Tracking Technologies
+            </h3>
+            <p class="text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">
+              Our website may use cookies and similar tracking technologies to enhance user experience, analyze site
+              traffic, and
+              personalize content. You can adjust your browser settings to refuse cookies, though this may affect some
+              functionality
+              of our site.
+            </p>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Changes to This Privacy Policy
+            </h3>
+            <p class="text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">
+              We may update this Privacy Policy from time to time. When changes are made, we will update the effective
+              date and notify
+              you via email or a notice on our website. We encourage you to review this policy periodically.
+            </p>
+          </div>
+          <!-- single item end -->
+
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Contact Us
+            </h3>
+            <p class="text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">
+              If you have any questions or concerns about our Privacy Policy or our data practices, please contact us
+              at:
+              <a href="mailto:support@securethebag.ai" class="hover:text-blue2">support@securethebag.ai</a>
+            </p>
+          </div>
+          <!-- single item end -->
+
+
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class=" py-[60px]">
+    <div class="container mx-auto ">
+      <!-- Main footer content -->
+      <div
+        class="flex flex-col sm:flex-row justify-start items-center sm:items-start gap-x-16 lg:pt-20 pt-10 pb-10 lg:pb-28 border-y border-[#C1C5BF] gap-y-6">
+        <!-- Logo Section -->
+        <div class="">
+          <a href="index.html"><img src="./images/logo-secure-the-bag.png" alt="Secure the Bag Logo"
+              class="w-[70px] lg:w-[106px]"></a>
+        </div>
+        <!-- Support & Contact Section -->
+        <div class="text-center sm:text-left space-y-5">
+          <h2 class=" text-NeutralPrimary text-base font-bold font-DM leading-tight">
+            Support &
+            Contact</h2>
+          <ul class="space-y-3">
+
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight hover:text-blue2">
+                Support</a>
+            </li>
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight  hover:text-blue2">
+                About</a>
+            </li>
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight  hover:text-blue2">
+                Contact Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div
+        class="pt-6 flex sm:flex-row lg:text-start text-center flex-col justify-between items-center gap-x-16 gap-y-4 flex-wrap lg:flex-row-reverse">
+
+
+
+        <div class="flex flex-row gap-x-6 gap-y-3 flex-wrap">
+          <a href="sms-opt-in-policy.html"
+            class="text-center justify-start text-NeutralSubtle text-sm font-medium font-DM leading-none  hover:text-blue2">
+            SMS Opt-In, Term of use</a>
+
+          <a href="privacy-policy.html"
+            class="text-center justify-start text-NeutralSubtle text-sm font-medium font-DM leading-none  hover:text-blue2">
+            Privacy policy</a>
+        </div>
+        <p class="self-stretch justify-start text-NeutralDim text-sm font-normal font-Inter leading-tight">
+          &copy;2025
+          Secure the Bag - All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- JavaScript to toggle mobile menu visibility -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

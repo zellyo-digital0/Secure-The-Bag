@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure The Bag</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <img src="./images/logo-secure-the-bag.png" alt="">
+    <div
+      class="w-16 h-16 border-4 border-gray-300 rounded-full spinner border-t-blue-500 absolute left-0 right-0 m-auto">
+    </div>
+  </div>
+
+  <header class="bg-white lg:px-7 px-4 ">
+    <div class=" flex justify-between items-center py-6 border-b border-[#C1C5BF]">
+      <!-- Logo and Navigation Links (Left Side) -->
+      <div class="flex items-center gap-16">
+        <a href=""><img src="./images/logo-secure-the-bag.png" alt="logo-secure-the-bag"
+            class="w-[70px] lg:w-[106px]"></a>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-6 text-gray-700">
+          <ul class="items-center gap-10 flex flex-row justify-start list-none">
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="index.html"
+                class="text-center justify-start text-base font-bold font-DM leading-tight hover:text-blue2">
+                Home</a>
+            </li>
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="product-page.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                Product</a>
+            </li>
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="faq.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                FAQ</a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Auth Buttons (Right Side) -->
+      <div class="hidden md:flex space-x-4">
+        <a href="#"
+          class="px-7 py-4 bg-transparent rounded-xl outline-1 outline-offset-[-1px] outline-blue3 backdrop-blur-[6px] text-blue2 hover:bg-blue2 hover:text-white transition-all text-sm font-bold font-DM leading-none">
+          Login
+        </a>
+        <a href=""
+          class="px-7 py-4 bg-blue2 rounded-xl text-white text-sm font-bold font-DM leading-none outline-1 outline-offset-[-1px] outline-transparent hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all">
+          Sign Up
+        </a>
+      </div>
+
+      <!-- Mobile View: Burger Menu (visible on small screens) -->
+      <div class="md:hidden flex justify-between items-center ">
+
+        <button id="hamburger-icon" class="text-blue3">
+          <img src="./images/menu-icon.svg" alt="menu-icon" class="">
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu (Off-Canvas) -->
+    <div id="mobile-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden opacity-0 transition-opacity duration-500">
+    </div>
+    <div id="mobile-menu"
+      class="fixed inset-0 bg-white z-50 transform -translate-x-full scale-95 transition-transform duration-500 ease-in-out">
+      <!-- Close Button -->
+      <button id="close-menu" class="absolute top-4 right-4 text-gray-600 text-3xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+          viewBox="0 0 16 16">
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+        </svg>
+      </button>
+      <!-- Menu Links -->
+      <div class="flex flex-col items-center justify-center space-y-4 pt-20">
+        <ul class="items-center gap-10 flex flex-col justify-start list-none">
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="index.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              Home</a>
+          </li>
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="product-page.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              Product</a>
+          </li>
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="faq.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              FAQ</a>
+          </li>
+
+        </ul>
+        <div class="flex flex-col space-y-4 mt-6">
+          <a href="#"
+            class="px-7 py-4 bg-transparent rounded-xl outline-1 outline-offset-[-1px] outline-blue3 backdrop-blur-[6px] text-blue2 hover:bg-blue2 hover:text-white transition-all text-sm font-bold font-DM leading-none text-center">
+            Login
+          </a>
+          <a href=""
+            class="px-7 py-4 bg-blue2 rounded-xl text-white text-sm font-bold font-DM leading-none outline-1 outline-offset-[-1px] outline-transparent hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all">
+            Sign Up
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- effortlessly start  -->
+    <section class="effortlessly  pt-20 lg:pt-28 pb-12 lg:pb-20">
+      <div class="container">
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-5 items-center">
+          <div class="lg:col-span-4 lg:order-2">
+            <img src="./images/hero.png" alt="effortlessly" class="lg:ml-auto mx-auto">
+          </div>
+          <div class="lg:col-span-8 lg:order-1 flex flex-col gap-y-8 lg:gap-y-12">
+            <div class="flex flex-col gap-y-5 lg:gap-y-8">
+              <h1
+                class="text-Neutral-1000 text-4xl lg:text-[5.5rem] font-bold font-DM leading-normal lg:leading-[95.04px]">
+                Effortlessly Stay on Top of Your Money</h1>
+              <p
+                class="opacity-80 justify-start text-Neutral-N800 text-lg lg:text-2xl font-normal font-Inter lg:leading-10 w-[695px] max-w-full">
+                No
+                more anxiety about money. Get real time alerts and insights so you can focus on the things that matter. 
+              </p>
+            </div>
+            <div class="">
+              <a href=""
+                class="px-6 py-4 bg-blue2 rounded-2xl  justify-start text-white text-base font-bold font-DM leading-tight inline-block hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all outline-1 outline-offset-[-1px] outline-transparent">
+                Secure
+                Your Bag
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- effortlessly end -->
+
+    <!-- stay on start  -->
+    <section class="stay-on pt-20 lg:pt-32 pb-16 lg:pb-28">
+      <div class="container flex flex-col gap-y-10 lg:gap-y-[60px]">
+        <div class="flex flex-col gap-y-5 lg:gap-y-10">
+          <h2 class=" text-NeutralStress text-3xl lg:text-5xl font-bold font-DM lg:leading-[55.68px]">
+            Stay On Top of Your Finances
+          </h2>
+          <p class="text-NeutralSecondary text-lg lg:text-2xl font-normal font-Inter lg:leading-10">
+            Let us handle the heavy lifting so you can stay focused on surviving and thriving the hustle. </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <!-- single item start  -->
+          <div class="col-span-1 flex flex-col gap-y-3">
+            <h4 class="text-NeutralPrimary text-2xl lg:text-4xl font-bold font-DM lg:leading-10">
+              Real-time BalanceAlerts
+            </h4>
+            <p
+              class="w-80 max-w-full justify-start text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-normal">
+              Get notified the moment your balance changes. You’ll never be caught off guard again.</p>
+          </div>
+          <!-- single item end  -->
+
+          <!-- single item start  -->
+          <div class="col-span-1 flex flex-col gap-y-3">
+            <h4 class="text-NeutralPrimary text-2xl lg:text-4xl font-bold font-DM lg:leading-10">
+              Scheduled Summaries
+            </h4>
+            <p
+              class="w-80 max-w-full justify-start text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-normal">
+              Morning, evening, anytime in between - get alerts only when you want them!</p>
+          </div>
+          <!-- single item end  -->
+          <!-- single item start  -->
+          <div class="col-span-1 flex flex-col gap-y-3">
+            <h4 class="text-NeutralPrimary text-2xl lg:text-4xl font-bold font-DM lg:leading-10">
+              Secure Bank Connections
+            </h4>
+            <p
+              class="w-80 max-w-full justify-start text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-normal">
+              Seamlessly and safely link your accounts through our trusted partners.</p>
+          </div>
+          <!-- single item end  -->
+
+        </div>
+      </div>
+    </section>
+    <!-- stay on end -->
+    <!-- Why start  -->
+    <section class="step-by-step pt-20 pb-28 bg-Neutral-N0">
+      <div class="container flex flex-col gap-5 lg:gap-20">
+        <div class="flex flex-col gap-2 lg:gap-5 justify-center text-center">
+          <h4 class=" text-blue2 text-sm lg:text-base font-medium font-Inter uppercase leading-snug tracking-wide">
+            Solution</h4>
+          <h2
+            class="text-center justify-start text-NeutralStress text-3xl lg:text-5xl font-bold font-DM lg:leading-[55.68px]">
+            Why Secure the Bag?</h2>
+        </div>
+        <div class="grid lg:grid-cols-4 grid-cols-1 gap-10 lg:gap-16">
+          <!-- single item start  -->
+          <div class="col-span-1 flex flex-col gap-5 lg:gap-20  border-t border-[#C1C5BF] pt-10">
+            <div class="">
+              <img src="./images/sign-up.svg" alt="sign-up">
+            </div>
+            <div class="flex flex-col gap-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM lg:leading-10">
+                Unlimited Access with Zero Hassle
+              </h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-normal">
+                No tiers, no hidden fees. You can enjoy all the features with one, simple subscription. </p>
+            </div>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="col-span-1 flex flex-col gap-5 lg:gap-20  border-t border-[#C1C5BF] pt-10">
+            <div class="">
+              <img src="./images/connect.svg" alt="connect">
+            </div>
+            <div class="flex flex-col gap-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM lg:leading-10">
+                Dodge Overdraft Fees
+              </h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-normal">
+                Avoid those pesky, surprise fees by knowing exactly when your balance dips too low. Our subscription
+                fees are less than
+                most overdraft pricing!
+              </p>
+            </div>
+          </div>
+          <!-- single item end -->
+          <!-- single item start  -->
+          <div class="col-span-1 flex flex-col gap-5 lg:gap-20  border-t border-[#C1C5BF] pt-10">
+            <div class="">
+              <img src="./images/customize.svg" alt="sign-up">
+            </div>
+            <div class="flex flex-col gap-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM lg:leading-10">
+                Real Time Updates
+              </h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-normal">
+                With minimal effort, you can spend less time worrying about account balances and more time conquering
+                the hustle
+                lifestyle. 
+              </p>
+            </div>
+          </div>
+          <!-- single item end -->
+          <!-- single item start  -->
+          <div class="col-span-1 flex flex-col gap-5 lg:gap-20  border-t border-[#C1C5BF] pt-10">
+            <div class="">
+              <img src="./images/site-back.svg" alt="sign-up">
+            </div>
+            <div class="flex flex-col gap-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM lg:leading-10">
+                Real Time Updates
+              </h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-normal">
+                With minimal effort, you can spend less time worrying about account balances and more time conquering
+                the hustle
+                lifestyle. 
+              </p>
+            </div>
+          </div>
+          <!-- single item end -->
+
+        </div>
+      </div>
+    </section>
+    <!-- Why  end -->
+
+    <!-- peace of mind start  -->
+    <section class="peace-of-mind py-32 bg-BgNeutralDim">
+      <div class="container flex flex-col gap-10 lg:gap-20">
+        <div class="flex flex-col gap-5">
+          <h2 class="text-NeutralStress text-3xl lg:text-5xl font-bold font-DM lg:leading-[55.68px] text-center">
+            Peace of Mind is One Simple <br class="lg:block hidden"> Subscription Away</h2>
+          <p
+            class="opacity-80 text-center justify-start text-NeutralSecondary text-base font-normal font-Inter leading-relaxed">
+            One monthly price for all features. Cancel anytime
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- signle item start  -->
+          <div class="lg:px-10 px-6 pt-10 pb-8 bg-white rounded-3xl lg:min-h-[440px] flex justify-start items-center">
+            <div class="flex flex-col gap-y-3">
+              <h3
+                class="text-NeutralPrimary text-center lg:text-start text-2xl lg:text-3xl font-bold font-DM lg:leading-10">
+                Pro Plan <br>
+                $10/month</h3>
+              <ul class="flex flex-col gap-2">
+                <li class="flex items-start gap-2.5">
+                  <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                  <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                    Two Daily SMS Alerts – More frequent updates to stay on top of your cash flow.
+                  </p>
+                </li>
+
+                <li class="flex items-start gap-2.5">
+                  <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                  <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                    All Starter Plan Benefits – Unlimited accounts, flexible scheduling, etc.
+                  </p>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                  <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                    Cancel Anytime – Freedom to stop whenever you need. permission model for data + AI
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- signle item end -->
+
+          <!-- signle item start  -->
+          <div class="lg:px-10 px-6 pt-10 pb-8 bg-white rounded-3xl lg:min-h-[440px] flex justify-start items-center">
+            <div class="flex flex-col gap-y-3">
+              <h3
+                class="text-NeutralPrimary text-center lg:text-start text-2xl lg:text-3xl font-bold font-DM lg:leading-10">
+                Max Plan <br>
+                $13/month</h3>
+              <ul class="flex flex-col gap-2">
+                <li class="flex items-start gap-2.5">
+                  <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                  <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                    Three Daily SMS Alerts – Maximum coverage so you never miss a beat.
+                  </p>
+                </li>
+
+                <li class="flex items-start gap-2.5">
+                  <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                  <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                    All Pro Plan Benefits – Enjoy everything from the Pro tier, plus an extra alert.
+                  </p>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                  <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                    Cancel Anytime – No stress, no hidden fees.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- signle item end -->
+          <!-- signle item start  -->
+          <div class="lg:px-10 px-6 pt-10 pb-8 bg-white rounded-3xl lg:min-h-[440px] flex justify-start items-center">
+            <div class="flex flex-col gap-y-3">
+              <h3
+                class="text-NeutralPrimary text-center lg:text-start text-2xl lg:text-3xl font-bold font-DM lg:leading-10">
+                Starter Plan<br />$7/month</h3>
+              <ul class="flex flex-col gap-2">
+                <li class="flex items-start gap-2.5">
+                  <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                  <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                    One Daily SMS Alert – Get your balance update once a day.
+                  </p>
+                </li>
+
+                <li class="flex items-start gap-2.5">
+                  <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                  <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                    Unlimited Bank Connections – Link as many accounts as you want.
+                  </p>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                  <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                    Cancel Anytime – No long-term commitment.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- signle item end -->
+
+        </div>
+        <div class="flex justify-center">
+          <a href=""
+            class="px-6 py-4 bg-blue2 rounded-2xl  justify-start text-white text-base font-bold font-DM leading-tight inline-block hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all outline-1 outline-offset-[-1px] outline-transparent">
+            Secure
+            Your Bag
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- peace of mind end -->
+
+  </main>
+
+  <footer class=" py-[60px]">
+    <div class="container mx-auto ">
+      <!-- Main footer content -->
+      <div
+        class="flex flex-col sm:flex-row justify-start items-center sm:items-start gap-x-16 lg:pt-20 pt-10 pb-10 lg:pb-28 border-y border-[#C1C5BF] gap-y-6">
+        <!-- Logo Section -->
+        <div class="">
+          <a href="index.html"><img src="./images/logo-secure-the-bag.png" alt="Secure the Bag Logo"
+              class="w-[70px] lg:w-[106px]"></a>
+        </div>
+        <!-- Support & Contact Section -->
+        <div class="text-center sm:text-left space-y-5">
+          <h2 class=" text-NeutralPrimary text-base font-bold font-DM leading-tight">
+            Support &
+            Contact</h2>
+          <ul class="space-y-3">
+
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight hover:text-blue2">
+                Support</a>
+            </li>
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight  hover:text-blue2">
+                About</a>
+            </li>
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight  hover:text-blue2">
+                Contact Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div
+        class="pt-6 flex sm:flex-row lg:text-start text-center flex-col justify-between items-center gap-x-16 gap-y-4 flex-wrap lg:flex-row-reverse">
+
+
+
+        <div class="flex flex-row gap-x-6 gap-y-3 flex-wrap">
+          <a href="sms-opt-in-policy.html"
+            class="text-center justify-start text-NeutralSubtle text-sm font-medium font-DM leading-none  hover:text-blue2">
+            SMS Opt-In, Term of use</a>
+
+          <a href="privacy-policy.html"
+            class="text-center justify-start text-NeutralSubtle text-sm font-medium font-DM leading-none  hover:text-blue2">
+            Privacy policy</a>
+        </div>
+        <p class="self-stretch justify-start text-NeutralDim text-sm font-normal font-Inter leading-tight">
+          &copy;2025
+          Secure the Bag - All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- JavaScript to toggle mobile menu visibility -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

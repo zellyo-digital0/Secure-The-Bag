@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-DM: 'DM Sans', sans-serif;
+  --font-Inter: 'Inter', sans-serif;
+
+  --screen-xsm: 370px;
+  --screen-sm: 480px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1220px;
+
+  --container-xsm: 100%;
+  --container-sm: 100%;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1220px;
+  --container-padding: 1rem;
+
+  --color-TextColor: #51564e;
+  --color-NeutralPrimary: #282b27;
+  --color-NeutralSubtle: #656b61;
+  --color-NeutralDim: #838b7f;
+  --color-NeutralStress: #141513;
+  --color-NeutralSecondary: #51564e;
+  --color-Neutral-N800: #3c403a;
+  --color-Neutral-1000: #141513;
+  --color-BgNeutralDim: #eff0ef;
+  --color-Neutral-N0: #fff;
+  --color-blue2: #336185;
+  --color-blue3: #82b5d2;
+  --color-darkOverlay: #4e4e4d;
+  --color-bgElement: #4e4e4d;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+@media (min-width: var(--screen-xsm)) {
+  .container {
+    max-width: var(--container-sm);
+  }
+}
+
+@media (min-width: var(--screen-sm)) {
+  .container {
+    max-width: var(--container-md);
+  }
+}
+
+@media (min-width: var(--screen-md)) {
+  .container {
+    max-width: var(--container-lg);
+  }
+}
+
+@media (min-width: var(--screen-lg)) {
+  .container {
+    max-width: var(--container-xl);
+  }
+}
+body {
+  font-family: var(--font-DM);
+  color: var(--color-TextColor);
+}
+.hide-preloader {
+  animation: scaleFadeOut 0.8s ease forwards;
+}
+
+@keyframes scaleFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.99);
+    visibility: hidden;
+  }
+}
+
+.spinner {
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure The Bag</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <img src="./images/logo-secure-the-bag.png" alt="">
+    <div
+      class="w-16 h-16 border-4 border-gray-300 rounded-full spinner border-t-blue-500 absolute left-0 right-0 m-auto">
+    </div>
+  </div>
+
+  <header class="bg-white lg:px-7 px-4 ">
+    <div class=" flex justify-between items-center py-6 border-b border-[#C1C5BF]">
+      <!-- Logo and Navigation Links (Left Side) -->
+      <div class="flex items-center gap-16">
+        <a href=""><img src="./images/logo-secure-the-bag.png" alt="logo-secure-the-bag"
+            class="w-[70px] lg:w-[106px]"></a>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-6 text-gray-700">
+          <ul class="items-center gap-10 flex flex-row justify-start list-none">
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="index.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                Home</a>
+            </li>
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="product-page.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                Product</a>
+            </li>
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="faq.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                FAQ</a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Auth Buttons (Right Side) -->
+      <div class="hidden md:flex space-x-4">
+        <a href="#"
+          class="px-7 py-4 bg-transparent rounded-xl outline-1 outline-offset-[-1px] outline-blue3 backdrop-blur-[6px] text-blue2 hover:bg-blue2 hover:text-white transition-all text-sm font-bold font-DM leading-none">
+          Login
+        </a>
+        <a href=""
+          class="px-7 py-4 bg-blue2 rounded-xl text-white text-sm font-bold font-DM leading-none outline-1 outline-offset-[-1px] outline-transparent hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all">
+          Sign Up
+        </a>
+      </div>
+
+      <!-- Mobile View: Burger Menu (visible on small screens) -->
+      <div class="md:hidden flex justify-between items-center ">
+
+        <button id="hamburger-icon" class="text-blue3">
+          <img src="./images/menu-icon.svg" alt="menu-icon" class="">
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu (Off-Canvas) -->
+    <div id="mobile-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden opacity-0 transition-opacity duration-500">
+    </div>
+    <div id="mobile-menu"
+      class="fixed inset-0 bg-white z-50 transform -translate-x-full scale-95 transition-transform duration-500 ease-in-out">
+      <!-- Close Button -->
+      <button id="close-menu" class="absolute top-4 right-4 text-gray-600 text-3xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+          viewBox="0 0 16 16">
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+        </svg>
+      </button>
+      <!-- Menu Links -->
+      <div class="flex flex-col items-center justify-center space-y-4 pt-20">
+        <ul class="items-center gap-10 flex flex-col justify-start list-none">
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="index.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              Home</a>
+          </li>
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="product-page.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              Product</a>
+          </li>
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="faq.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              FAQ</a>
+          </li>
+
+        </ul>
+        <div class="flex flex-col space-y-4 mt-6">
+          <a href="#"
+            class="px-7 py-4 bg-transparent rounded-xl outline-1 outline-offset-[-1px] outline-blue3 backdrop-blur-[6px] text-blue2 hover:bg-blue2 hover:text-white transition-all text-sm font-bold font-DM leading-none text-center">
+            Login
+          </a>
+          <a href=""
+            class="px-7 py-4 bg-blue2 rounded-xl text-white text-sm font-bold font-DM leading-none outline-1 outline-offset-[-1px] outline-transparent hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all">
+            Sign Up
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="opt-in py-10 lg:py-[90px]">
+      <div class="container">
+
+        <h1 class=" text-NeutralStress text-2xl lg:text-5xl font-bold font-DM leading-[55.68px]">
+          SMS Opt-In Policy</h1>
+        <div class=" mt-5 lg:mt-[60px] flex flex-col gap-10">
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Introduction</h3>
+            <p class="opacity-80 justify-start text-Neutral-N800 text-base font-normal font-Inter leading-relaxed">
+              By providing your mobile telephone number and opting in to our service, you agree to receive automated SMS
+              messages
+              regarding your bank balance at intervals that you specify, up to the limit as specified in your pricing
+              tier. This SMS
+              Opt-In Policy outlines your consent, the services provided, applicable terms, and your rights regarding
+              the
+              reception
+              of these text messages.</p>
+          </div>
+          <!-- single item end -->
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Consent and Authorization</h3>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Explicit Consent: By entering your mobile number and clicking the “Opt-In” consent button, you
+                  expressly authorize
+                  Secure the Bag (hereafter “the Provider”) to send you automated text messages. These messages will
+                  contain information
+                  related toyour bank balance.
+                </p>
+              </li>
+
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Verification: Upon signing up, you may receive an initial SMS to verify your mobile number. If you do
+                  not respond to
+                  this message as instructed, your request to opt in may not be fully completed.
+                </p>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Eligibility: You must be the owner of the mobile number provided. The service is available only to
+                  individuals who are
+                  legally authorized to receive SMS communications at the specified number.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Description of the Service
+            </h3>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Service Overview: The service provides periodic SMS notifications concerning your bank balance. The
+                  notifications are
+                  sent based on the frequency you have selected per yourservice agreement.
+                </p>
+              </li>
+
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Content of SMS: Each SMS will contain current bank balance information as maintained or reported by
+                  your financial
+                  institution. The messages are intended solely for informational purposes and should not be construed
+                  as financial advice
+                  or a complete representation of your financial status.
+                </p>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Message Frequency: You can set the frequency of SMS notifications up to the limit per your service
+                  agreement. Changes to
+                  message frequency can be made through your account settings or by contacting customer support.
+                </p>
+              </li>
+
+            </ul>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Standard Messaging Rates
+            </h3>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Carrier Charges: Message and data rates may apply based on your mobile service plan. Secure the Bag is
+                  not responsible
+                  for any charges imposed by your mobile carrier.
+                </p>
+              </li>
+
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Disclaimer on Costs: . It is your responsibility to consult with your mobile carrier regarding
+                  applicable fees and service charges.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Privacy and Data Security
+            </h3>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Data Usage: Your mobile number and any associated account information will be used solely for the
+                  purpose of providing
+                  the SMS service. This information will be stored and processed in accordance with our Privacy Policy
+                  and applicable data protection laws.
+                </p>
+              </li>
+
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Confidentiality: . We implement robust security measures to ensure the confidentiality and protection
+                  of your personal
+                  data. However, you acknowledge that SMS is not a secure medium for transmitting sensitive information
+                  and that you are
+                  responsible for maintaining the security of your mobile device.
+                </p>
+              </li>
+
+            </ul>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Opt-Out Process
+            </h3>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Withdrawal of Consent: You have the right to revoke your consent at any time. To opt out of receiving
+                  SMS notifications,
+                  simply reply with “STOP” to any text message received from Secure the Bag.
+                </p>
+              </li>
+
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Confirmation of Cancellation: After you send the opt-out message, you will receive a confirmation that
+                  your number has
+                  been removed from the messaging list. Additional instructions will be provided to change the frequency
+                  of messages or to
+                  cancel yourservice agreement.
+                </p>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Reinstating the Service: Should you wish to restart the service, you will need to follow the
+                  re-enrollment process as
+                  specified on our website.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Disclaimer and Limitation of Liability
+            </h3>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Service Accuracy: While we strive to ensure that the balance information is accurate and timely,
+                  Secure the Bag does not
+                  guarantee that the content will be error-free or that updates will be provided without interruption or
+                  delay.
+                </p>
+              </li>
+
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Not a Financial Advisory: The SMS notifications are provided for informational purposes only and
+                  should not be used as
+                  the sole basis for making financial decisions.
+                </p>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Limitation of Liability: To the fullest extent permitted by law, Secure the Bag and its affiliates
+                  shall not be liable
+                  for any direct, indirect, incidental, or consequential damages arising from the use or inability to
+                  use our SMS notification service.
+                </p>
+              </li>
+
+            </ul>
+          </div>
+          <!-- single item end -->
+
+          <!-- single item start  -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-Neutral-1000 text-xl lg:text-3xl font-bold font-DM leading-9">
+              Changes to the Policy
+            </h3>
+            <ul class="flex flex-col gap-2">
+              <li class="flex items-start gap-2.5">
+                <img src="./images/AI.svg" alt="ai-icon" class="mt-1">
+                <p class="text-NeutralPrimary text-base font-normal font-Inter leading-relaxed">
+                  Amendments:We reserve the right to modify or update this SMS Opt-In Policy at any time. Significant
+                  changes will be
+                  communicated via SMS or through our website. Continued use of the service after such changes
+                  constitutes your acceptance
+                  of the revised policy.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <!-- single item end -->
+
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class=" py-[60px]">
+    <div class="container mx-auto ">
+      <!-- Main footer content -->
+      <div
+        class="flex flex-col sm:flex-row justify-start items-center sm:items-start gap-x-16 lg:pt-20 pt-10 pb-10 lg:pb-28 border-y border-[#C1C5BF] gap-y-6">
+        <!-- Logo Section -->
+        <div class="">
+          <a href="index.html"><img src="./images/logo-secure-the-bag.png" alt="Secure the Bag Logo"
+              class="w-[70px] lg:w-[106px]"></a>
+        </div>
+        <!-- Support & Contact Section -->
+        <div class="text-center sm:text-left space-y-5">
+          <h2 class=" text-NeutralPrimary text-base font-bold font-DM leading-tight">
+            Support &
+            Contact</h2>
+          <ul class="space-y-3">
+
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight hover:text-blue2">
+                Support</a>
+            </li>
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight  hover:text-blue2">
+                About</a>
+            </li>
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight  hover:text-blue2">
+                Contact Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div
+        class="pt-6 flex sm:flex-row lg:text-start text-center flex-col justify-between items-center gap-x-16 gap-y-4 flex-wrap lg:flex-row-reverse">
+
+
+
+        <div class="flex flex-row gap-x-6 gap-y-3 flex-wrap">
+          <a href="sms-opt-in-policy.html"
+            class="text-center justify-start text-NeutralSubtle text-sm font-medium font-DM leading-none  hover:text-blue2">
+            SMS Opt-In, Term of use</a>
+
+          <a href="privacy-policy.html"
+            class="text-center justify-start text-NeutralSubtle text-sm font-medium font-DM leading-none  hover:text-blue2">
+            Privacy policy</a>
+        </div>
+        <p class="self-stretch justify-start text-NeutralDim text-sm font-normal font-Inter leading-tight">
+          &copy;2025
+          Secure the Bag - All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- JavaScript to toggle mobile menu visibility -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

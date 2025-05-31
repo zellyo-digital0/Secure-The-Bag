@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure The Bag</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <img src="./images/logo-secure-the-bag.png" alt="">
+    <div
+      class="w-16 h-16 border-4 border-gray-300 rounded-full spinner border-t-blue-500 absolute left-0 right-0 m-auto">
+    </div>
+  </div>
+
+  <header class="bg-white lg:px-7 px-4 ">
+    <div class=" flex justify-between items-center py-6 border-b border-[#C1C5BF]">
+      <!-- Logo and Navigation Links (Left Side) -->
+      <div class="flex items-center gap-16">
+        <a href=""><img src="./images/logo-secure-the-bag.png" alt="logo-secure-the-bag"
+            class="w-[70px] lg:w-[106px]"></a>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-6 text-gray-700">
+          <ul class="items-center gap-10 flex flex-row justify-start list-none">
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="index.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                Home</a>
+            </li>
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="product-page.html"
+                class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+                Product</a>
+            </li>
+
+            <li class="flex justify-start items-start overflow-hidden">
+              <a href="faq.html"
+                class="text-center justify-start text-base font-bold font-DM leading-tight hover:text-blue2">
+                FAQ</a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Auth Buttons (Right Side) -->
+      <div class="hidden md:flex space-x-4">
+        <a href="#"
+          class="px-7 py-4 bg-transparent rounded-xl outline-1 outline-offset-[-1px] outline-blue3 backdrop-blur-[6px] text-blue2 hover:bg-blue2 hover:text-white transition-all text-sm font-bold font-DM leading-none">
+          Login
+        </a>
+        <a href=""
+          class="px-7 py-4 bg-blue2 rounded-xl text-white text-sm font-bold font-DM leading-none outline-1 outline-offset-[-1px] outline-transparent hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all">
+          Sign Up
+        </a>
+      </div>
+
+      <!-- Mobile View: Burger Menu (visible on small screens) -->
+      <div class="md:hidden flex justify-between items-center ">
+
+        <button id="hamburger-icon" class="text-blue3">
+          <img src="./images/menu-icon.svg" alt="menu-icon" class="">
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu (Off-Canvas) -->
+    <div id="mobile-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden opacity-0 transition-opacity duration-500">
+    </div>
+    <div id="mobile-menu"
+      class="fixed inset-0 bg-white z-50 transform -translate-x-full scale-95 transition-transform duration-500 ease-in-out">
+      <!-- Close Button -->
+      <button id="close-menu" class="absolute top-4 right-4 text-gray-600 text-3xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+          viewBox="0 0 16 16">
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+        </svg>
+      </button>
+      <!-- Menu Links -->
+      <div class="flex flex-col items-center justify-center space-y-4 pt-20">
+        <ul class="items-center gap-10 flex flex-col justify-start list-none">
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="index.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              Home</a>
+          </li>
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="product-page.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              Product</a>
+          </li>
+
+          <li class="flex justify-start items-start overflow-hidden">
+            <a href="faq.html"
+              class="text-center justify-start text-base font-medium font-DM leading-tight hover:text-blue2">
+              FAQ</a>
+          </li>
+
+        </ul>
+        <div class="flex flex-col space-y-4 mt-6">
+          <a href="#"
+            class="px-7 py-4 bg-transparent rounded-xl outline-1 outline-offset-[-1px] outline-blue3 backdrop-blur-[6px] text-blue2 hover:bg-blue2 hover:text-white transition-all text-sm font-bold font-DM leading-none text-center">
+            Login
+          </a>
+          <a href=""
+            class="px-7 py-4 bg-blue2 rounded-xl text-white text-sm font-bold font-DM leading-none outline-1 outline-offset-[-1px] outline-transparent hover:outline-blue3 hover:bg-transparent hover:text-blue2 transition-all">
+            Sign Up
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="faq py-[68px]">
+      <div class="container space-y-[60px]">
+        <div class="flex flex-col gap-y-10 lg:gap-y-[60px]">
+          <div class="flex flex-col gap-y-5 lg:gap-y-10">
+            <h1 class="text-NeutralStress text-2xl lg:text-5xl font-bold font-DM leading-[55.68px]">
+              Frequently Asked Questions</h1>
+            <h4 class="text-NeutralSecondary text-lg lg:text-2xl font-normal font-Inter leading-10">
+              Have a question?</h4>
+          </div>
+          <div class="flex flex-col gap-y-8">
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q:
+                How does billing work?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: You’re billed monthly at the rate you select—$7, $10, or $13/month—depending on how many SMS alerts
+                you want each
+                day. Your subscription renews automatically, but you can cancel anytime with no long-term
+                commitment.</p>
+            </div>
+            <!-- single item end  -->
+
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q: What
+                happens if
+                I cancel my subscription?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: Cancellation is simple and hassle-free. Once you cancel, your subscription will not renew at the end
+                of your current
+                billing cycle. You can manage or cancel your subscription anytime through your account settings.</p>
+            </div>
+            <!-- single item end  -->
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q: Are
+                there any
+                hidden fees?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: No. The price you see is the price you pay. Our subscription model is all-inclusive with no hidden
+                fees or extra
+                charges.</p>
+            </div>
+            <!-- single item end  -->
+
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q: How
+                do I
+                connect my bank account?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: Simply log into your account, navigate to the bank connection section, and follow the prompts. Our
+                Plaid integration
+                ensures your account details are linked securely and quickly.</p>
+            </div>
+            <!-- single item end  -->
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q: How
+                do I update
+                my SMS alert preferences?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: You can customize your alert schedule—whether that’s one, two, or three texts per day—directly from
+                your profile
+                settings. Adjust your preferences anytime to fit your routine.</p>
+            </div>
+            <!-- single item end  -->
+
+
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-y-10 lg:gap-y-[60px]">
+          <div class="flex flex-col gap-y-5 lg:gap-y-10">
+            <h1 class="text-NeutralStress text-2xl lg:text-5xl font-bold font-DM leading-[55.68px]">
+              Security & Data Privacy</h1>
+            <h4 class="text-NeutralSecondary text-lg lg:text-2xl font-normal font-Inter leading-10">
+              But what about my data?</h4>
+          </div>
+          <div class="flex flex-col gap-y-8">
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q: How
+                secure is
+                my financial data?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: Security is our top priority. We use Plaid’s trusted, encrypted connections to access your bank data.
+                Your
+                information is never stored on our servers, and we follow best practices to keep your data safe.</p>
+            </div>
+            <!-- single item end  -->
+
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q: Is
+                my personal
+                information private?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: Absolutely. We adhere to strict privacy policies. Your personal and financial data is used solely to
+                provide you with
+                real-time updates, and we never share your information with third parties without your consent.</p>
+            </div>
+            <!-- single item end  -->
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q: Are
+                there any
+                hidden fees?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: No. The price you see is the price you pay. Our subscription model is all-inclusive with no hidden
+                fees or extra
+                charges.</p>
+            </div>
+            <!-- single item end  -->
+
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q: How
+                do I
+                connect my bank account?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: Simply log into your account, navigate to the bank connection section, and follow the prompts. Our
+                Plaid integration
+                ensures your account details are linked securely and quickly.</p>
+            </div>
+            <!-- single item end  -->
+            <!-- single item start  -->
+            <div class="flex flex-col gap-y-3">
+              <h3 class="text-NeutralPrimary text-xl lg:text-3xl font-bold font-DM leading-9">Q: What
+                should I
+                do if I have more questions?</h3>
+              <p class="text-NeutralSecondary text-base lg:text-xl font-normal font-Inter leading-loose">
+                A: We’re here to help! If you need further assistance or have any other questions, please visit our
+                Support Page or
+                email us directly at <a href="mailto:support@securethebag.ai"
+                  class="hover:text-blue2">support@securethebag.ai</a></p>
+            </div>
+            <!-- single item end  -->
+
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <footer class=" py-[60px]">
+    <div class="container mx-auto ">
+      <!-- Main footer content -->
+      <div
+        class="flex flex-col sm:flex-row justify-start items-center sm:items-start gap-x-16 lg:pt-20 pt-10 pb-10 lg:pb-28 border-y border-[#C1C5BF] gap-y-6">
+        <!-- Logo Section -->
+        <div class="">
+          <a href="index.html"><img src="./images/logo-secure-the-bag.png" alt="Secure the Bag Logo"
+              class="w-[70px] lg:w-[106px]"></a>
+        </div>
+        <!-- Support & Contact Section -->
+        <div class="text-center sm:text-left space-y-5">
+          <h2 class=" text-NeutralPrimary text-base font-bold font-DM leading-tight">
+            Support &
+            Contact</h2>
+          <ul class="space-y-3">
+
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight hover:text-blue2">
+                Support</a>
+            </li>
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight  hover:text-blue2">
+                About</a>
+            </li>
+            <li>
+              <a href=""
+                class="text-center justify-start text-NeutralSubtle text-base font-medium font-DM leading-tight  hover:text-blue2">
+                Contact Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div
+        class="pt-6 flex sm:flex-row lg:text-start text-center flex-col justify-between items-center gap-x-16 gap-y-4 flex-wrap lg:flex-row-reverse">
+
+
+
+        <div class="flex flex-row gap-x-6 gap-y-3 flex-wrap">
+          <a href="sms-opt-in-policy.html"
+            class="text-center justify-start text-NeutralSubtle text-sm font-medium font-DM leading-none  hover:text-blue2">
+            SMS Opt-In, Term of use</a>
+
+          <a href="privacy-policy.html"
+            class="text-center justify-start text-NeutralSubtle text-sm font-medium font-DM leading-none  hover:text-blue2">
+            Privacy policy</a>
+        </div>
+        <p class="self-stretch justify-start text-NeutralDim text-sm font-normal font-Inter leading-tight">
+          &copy;2025
+          Secure the Bag - All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
